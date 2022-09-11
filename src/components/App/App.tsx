@@ -1,30 +1,22 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import { sortAndDeduplicateDiagnostics } from 'typescript';
 import './App.css';
+import FeaturedMoods from '../FeaturedMoods/FeaturedMoods';
+import SongsContainer from '../SongsContainer/SongsContainer';
 
-class App extends Component {
-  constructor( props: any ) {
-    super( props );
-    this.state = {
 
-    }
-  }
+const App: React.FC = () => {
 
-  componentDidMount() {
-    return fetch('http://localhost:3001/')
-      .then((response) => response.json())
-      .then((data) => console.log(data));
-    }
-
-  render( ) {
     return (
       <div className="App">
         <h1>MoodTunes</h1>
+        <FeaturedMoods />
+        <SongsContainer />
       </div>
     );
-  }
-  
+
 }
+
 
 export default App;
 
