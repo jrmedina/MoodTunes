@@ -1,9 +1,9 @@
 import './FeaturedMoods.css'
-import React, { useState} from 'react';
+import React, { useState } from 'react';
 import { FeaturedMoodsProps } from '../../model';
 import SingleMood from '../SingleMood/SingleMood';
 
-interface Props{
+interface Props {
   songs: {
     id: number;
     title: string;
@@ -19,23 +19,22 @@ interface Props{
   }[]
 }
 
-const FeaturedMoods: React.FC <Props>= ({ songs, moods }) => {
-  const moodMusic = moods.map( mood => {
+const FeaturedMoods: React.FC<Props> = ({ songs, moods }) => {
+  const moodMusic = moods.map(mood => {
     return (
-      <SingleMood 
-      key={mood.id}
-      id={mood.id}
-      title={mood.title}
-      image={mood.img}
-        />
+      <SingleMood
+        key={mood.id}
+        id={mood.id}
+        title={mood.title}
+        image={mood.img}
+      />
     )
   })
- 
-    
+
+
   return (
     <div className='moods-container'>
       {moodMusic}
-      
     </div>
   )
 }
