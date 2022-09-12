@@ -1,45 +1,41 @@
+import './FeaturedMoods.css'
 import React, { useState} from 'react';
+import { FeaturedMoodsProps } from '../../model';
+import SingleMood from '../SingleMood/SingleMood';
 
+interface Props{
+  songs: {
+    id: number;
+    title: string;
+    artist: string;
+    urlKey: string;
+    genres: string[];
+    searchTerms?: string[];
+  }[],
+  moods: {
+    id: number;
+    title: string;
+    img: string;
+  }[]
+}
 
-const FeaturedMoods: React.FC = () => {
-
-
-    const [moods, setMoods] = useState<string[]>([
-      "Angry",
-      "Chasing",
-      "Dark",
-      "Dreamy",
-      "Eccentric",
-      "Elegant",
-      "Epic",
-      "Euphoric",
-      "Fear",
-      "Floating",
-      "Funny",
-      "Glamorous",
-      "Happy",
-      "Hopeful",
-      "Marching",
-      "Mysterious",
-      "Peaceful",
-      "Quirky",
-      "Relaxing",
-      "Restless",
-      "Romantic",
-      "Running",
-      "Sad",
-      "Scary",
-      "Sentimental",
-      "Sexy",
-      "Smooth",
-      "Sneaking",
-      "Suspense",
-      "Weird",
-    ]
-    ) 
+const FeaturedMoods: React.FC <Props>= ({ songs, moods }) => {
+  const moodMusic = moods.map( mood => {
+    return (
+      <SingleMood 
+      key={mood.id}
+      id={mood.id}
+      title={mood.title}
+      image={mood.img}
+        />
+    )
+  })
+ 
+    
   return (
-    <div>
-      <h1>hello</h1>
+    <div className='moods-container'>
+      {moodMusic}
+      
     </div>
   )
 }
