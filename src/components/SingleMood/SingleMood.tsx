@@ -1,9 +1,17 @@
 import React from 'react'
 
-const SingleMood = () => {
+interface SingleMoodProps{
+  id: number;
+  title: string;
+  image: string;
+}
+
+const SingleMood: React.FC<SingleMoodProps> = ({ id, title, image }) => {
   return (
-    <div>
-      
+    <div className='single-mood'>
+      <p>{title}</p>
+      <img 
+        src={image}/>
     </div>
   )
 }

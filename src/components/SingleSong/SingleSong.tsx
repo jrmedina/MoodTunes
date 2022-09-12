@@ -1,16 +1,7 @@
 import React from 'react'
+import { SingleSongProps } from '../../model'
 
-type songDetails = {
-
-  id: number;
-  title: string;
-  artist: string;
-  urlKey: string;
-  genres: string[];
-  searchTerms?: string[];
-}
-
-const SingleSong: React.FC<songDetails> = ({title, artist, urlKey, genres}) => {
+const SingleSong: React.FC<SingleSongProps> = ({id, title, artist, urlKey, genres, searchTerms}) => {
   
  
   return (
