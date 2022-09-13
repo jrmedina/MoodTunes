@@ -1,3 +1,24 @@
-/* .single-mood {
-    background-color: black;
-} */
+.single-mood {
+  /* border: red solid 1px; */
+  height: 15em;
+  width: 17%;
+  background: whitesmoke;
+transition: transform 0.2s ease-in-out;
+
+}
+h2 {
+  color: black;
+  margin: 2%;
+}
+img {
+  height: 85%;
+  width: 100%;
+  /* object-fit: cover; */
+}
+img:hover{
+  cursor: pointer;
+}
+
+.single-mood:hover {
+  transform: scale(1.1);
+}

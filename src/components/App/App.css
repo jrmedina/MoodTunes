@@ -1,3 +1,20 @@
+@font-face {
+  font-family: title;
+  src: url(../../assets/StyleThief-Mz6w.ttf);
+}
+
 .App {
   text-align: center;
+  background: #2E1A47;
+  height: 100vh;
+  font-family: Epidemic, sans-serif;
+}
+
+h1{
+  font-family: title;
+  font-size: 6em;
+  letter-spacing: 0.1em;
+  margin: 0%;
+  padding-top:20px;
+  padding-bottom:20px
 }

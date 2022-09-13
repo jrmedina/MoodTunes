@@ -1,4 +1,5 @@
 import React from 'react'
+import "./SingleMood.css"
 
 interface SingleMoodProps{
   id: number;
@@ -9,7 +10,7 @@ interface SingleMoodProps{
 const SingleMood: React.FC<SingleMoodProps> = ({ id, title, image }) => {
   return (
     <div className='single-mood'>
-      <p>{title}</p>
+      <h2>{title}</h2>
       <img 
         src={image}/>
     </div>
