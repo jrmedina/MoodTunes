@@ -1,15 +1,20 @@
-/* .moods-container {
+.moods-container {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-content: center;
     gap: 15px;
     flex-wrap: wrap;
+    padding-left: 10%;
+    padding-right: 10%;
+    /* border: solid yellow 1px; */
+    /* height: 50% */
+    
 }
 
-p {
+h2 {
     display: flex;
     justify-content: center;
-    background-color: lightblue;
-    height: 5em;
-    width: 10%;
-} */
+    /* background-color: lightblue; */
+    /* height: 5em;
+    width: 10%; */
+}

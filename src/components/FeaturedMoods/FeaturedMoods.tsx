@@ -2,6 +2,7 @@ import './FeaturedMoods.css'
 import React, { useState } from 'react';
 import { FeaturedMoodsProps } from '../../model';
 import SingleMood from '../SingleMood/SingleMood';
+import "./FeaturedMoods.css"
 
 interface Props {
   songs: {
@@ -30,13 +31,9 @@ const FeaturedMoods: React.FC<Props> = ({ songs, moods }) => {
       />
     )
   })
+const featuredMoods = moodMusic.slice(0, 10)
 
-
-  return (
-    <div className='moods-container'>
-      {moodMusic}
-    </div>
-  )
+  return <div className="moods-container">{featuredMoods}</div>;
 }
 
 export default FeaturedMoods
