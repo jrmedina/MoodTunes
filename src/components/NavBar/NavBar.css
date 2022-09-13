@@ -1,9 +1,14 @@
 .nav-container {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
+    justify-content: center;
 }
 
 .title {
     align-self: center;
+}
+.skull{
+    height: 6em;
+    width: 6em;
 }
