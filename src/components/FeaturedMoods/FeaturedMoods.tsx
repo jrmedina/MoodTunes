@@ -1,8 +1,8 @@
-import './FeaturedMoods.css'
-import React, { useState } from 'react';
-import { FeaturedMoodsProps } from '../../model';
-import SingleMood from '../SingleMood/SingleMood';
-import "./FeaturedMoods.css"
+import "./FeaturedMoods.css";
+import React, { useState } from "react";
+import { FeaturedMoodsProps } from "../../model";
+import SingleMood from "../SingleMood/SingleMood";
+import "./FeaturedMoods.css";
 
 interface Props {
   songs: {
@@ -12,16 +12,16 @@ interface Props {
     urlKey: string;
     genres: string[];
     searchTerms?: string[];
-  }[],
+  }[];
   moods: {
     id: number;
     title: string;
     img: string;
-  }[]
+  }[];
 }
 
 const FeaturedMoods: React.FC<Props> = ({ songs, moods }) => {
-  const moodMusic = moods.map(mood => {
+  const moodMusic = moods.map((mood) => {
     return (
       <SingleMood
         key={mood.id}
@@ -29,11 +29,11 @@ const FeaturedMoods: React.FC<Props> = ({ songs, moods }) => {
         title={mood.title}
         image={mood.img}
       />
-    )
-  })
-const featuredMoods = moodMusic.slice(0, 10)
+    );
+  });
+  const featuredMoods = moodMusic.slice(0, 10);
 
   return <div className="moods-container">{featuredMoods}</div>;
-}
+};
 
-export default FeaturedMoods
+export default FeaturedMoods;
