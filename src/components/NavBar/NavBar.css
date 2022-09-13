@@ -1,0 +1,9 @@
+.nav-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.title {
+    align-self: center;
+}

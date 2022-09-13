@@ -3,6 +3,7 @@ import { sortAndDeduplicateDiagnostics } from 'typescript';
 import './App.css';
 import FeaturedMoods from '../FeaturedMoods/FeaturedMoods';
 import SongsContainer from '../SongsContainer/SongsContainer';
+import NavBar from '../NavBar/NavBar';
 import { SingleSongProps, SongsProps, SingleMoodProps, MoodsProps, AppProps } from '../../model';
 
 interface Props {
@@ -43,8 +44,8 @@ const App: React.FC = () => {
   console.log('APPSTATE: ', appState)
   return (
     <div className="App">
-      <h1>MoodTunes</h1>
-
+      <NavBar />
+      
       <FeaturedMoods
         songs={appState.songs}
         moods={appState.moods}

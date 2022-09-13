@@ -1,24 +1,37 @@
 .single-mood {
   /* border: red solid 1px; */
-  height: 15em;
+  height: 10em;
   width: 17%;
-  background: whitesmoke;
-transition: transform 0.2s ease-in-out;
+  background-color: rgba( 0, 0, 0, 0.85 );
+  box-shadow: 0 1px 15px 2px rgba( 255, 105, 180, 0.35 );
+  transition: transform 0.2s ease-in-out;
+  border-radius: 2px;
 
 }
+
 h2 {
+  font-family: title;
   color: black;
+  font-size: 1.5em;
+  letter-spacing: 0.12em;
   margin: 2%;
+  color: rgba(245, 245, 245, 0.9);
+  /* text-shadow: 1px 6px 5px rgba(255, 105, 180, 0.5); */
 }
+
 img {
-  height: 85%;
+  height: 75%;
   width: 100%;
-  /* object-fit: cover; */
+  border-radius: 2px 2px 0 0;
 }
+
 img:hover{
   cursor: pointer;
 }
 
 .single-mood:hover {
   transform: scale(1.1);
+  background-color: rgba( 0, 0, 0, 0.85 );
+  box-shadow: 0 1px 15px 2px rgb(255, 105, 180);
+  cursor: pointer;
 }

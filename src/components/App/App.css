@@ -5,9 +5,8 @@
 
 .App {
   text-align: center;
-  background: #2E1A47;
   height: 100vh;
-  font-family: Epidemic, sans-serif;
+  /* font-family: Epidemic, sans-serif; */
 }
 
 h1{
@@ -16,5 +15,11 @@ h1{
   letter-spacing: 0.1em;
   margin: 0%;
   padding-top:20px;
-  padding-bottom:20px
+  padding-bottom:20px;
+  color: rgba(245, 245, 245, 0.7);
+  text-shadow: 1px 6px 5px rgb(255, 105, 180);
+}
+
+h1:hover {
+  cursor:default;
 }

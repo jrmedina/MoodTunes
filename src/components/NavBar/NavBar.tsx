@@ -1,9 +1,10 @@
+import './NavBar.css'
 import React from 'react'
 
 const NavBar = () => {
   return (
-    <div>
-      
+    <div className='nav-container'>
+      <h1 className='title'>MoodTunes</h1>
     </div>
   )
 }
