@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { sortAndDeduplicateDiagnostics } from 'typescript';
 import './App.css';
+import MoodForm from '../MoodForm/MoodForm';
 import FeaturedMoods from '../FeaturedMoods/FeaturedMoods';
 import SongsContainer from '../SongsContainer/SongsContainer';
 import NavBar from '../NavBar/NavBar';
@@ -13,7 +14,7 @@ interface Props {
     artist: string;
     urlKey: string;
     genres: string[];
-    searchTerms?: string[];
+    searchTerms: string[];
   }[],
   moods: {
     id: number;
@@ -41,17 +42,18 @@ const App: React.FC = () => {
     };
     fetchData();
   }, []);
-  console.log('APPSTATE: ', appState)
+  
+
   return (
     <div className="App">
       <NavBar />
-      
+      <h2>Featured Moods: </h2>
       <FeaturedMoods
         songs={appState.songs}
         moods={appState.moods}
       />
-
-      <SongsContainer />
+      <MoodForm moods={appState.moods} setAppState={setAppState} songs={appState.songs} />
+      
     </div>
   );
 
