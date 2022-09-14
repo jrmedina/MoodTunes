@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import { json } from 'stream/consumers';
-import SingleSong from '../SingleSong/SingleSong';
+import React, { useState, useEffect } from "react";
+import { json } from "stream/consumers";
+import SingleSong from "../SingleSong/SingleSong";
 
 interface Props {
   filteredSongs: {
@@ -10,16 +10,30 @@ interface Props {
     urlKey: string;
     genres: string[];
     searchTerms: string[];
-  }[],
+  }[];
 }
 const SongsContainer: React.FC<Props> = ({ filteredSongs }) => {
+  console.log(filteredSongs);
 
+  const songCards = filteredSongs.map((song) => {
+    return (
+      <SingleSong
+        id={song.id}
+        title={song.title}
+        artist={song.artist}
+        urlKey={song.urlKey}
+        genres={song.genres}
+        searchTerms={song.searchTerms}
+        key={song.id}
+      />
+    );
+  });
 
   return (
     <div>
-      <p>Hey it works dude</p>
+      {songCards}
     </div>
-  )
-}
+  );
+};
 
-export default SongsContainer
+export default SongsContainer;
