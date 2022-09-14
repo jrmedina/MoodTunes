@@ -5,6 +5,7 @@ import MoodForm from "../MoodForm/MoodForm";
 import FeaturedMoods from "../FeaturedMoods/FeaturedMoods";
 import SongsContainer from "../SongsContainer/SongsContainer";
 import NavBar from "../NavBar/NavBar";
+import Footer from "../Footer/Footer";
 import {
   SingleSongProps,
   SongsProps,
@@ -79,6 +80,7 @@ const App: React.FC = () => {
           )}
         />
       </Switch>
+        <Footer />
     </div>
   );
 };
