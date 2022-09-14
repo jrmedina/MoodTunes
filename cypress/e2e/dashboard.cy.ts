@@ -46,6 +46,7 @@ describe('App', () => {
   it('should change URL when the user selects a mood', () => {
     cy.get('select').select('Sexy')
     cy.get('a').click()
+    cy.url().should("be.equal", "http://localhost:3000/results");
   })
 
 })
