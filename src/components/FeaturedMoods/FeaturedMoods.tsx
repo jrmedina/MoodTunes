@@ -32,7 +32,7 @@ const FeaturedMoods: React.FC<Props> = ({ songs, moods }) => {
     );
   });
   const featuredMoods = moodMusic.slice(0, 10);
-
+  
   return <div className="moods-container">{featuredMoods}</div>;
 };
 
