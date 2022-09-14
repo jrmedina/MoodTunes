@@ -6,6 +6,7 @@ import FeaturedMoods from '../FeaturedMoods/FeaturedMoods';
 import SongsContainer from '../SongsContainer/SongsContainer';
 import NavBar from '../NavBar/NavBar';
 import { SingleSongProps, SongsProps, SingleMoodProps, MoodsProps, AppProps } from '../../model';
+import { Switch, Route } from 'react-router-dom'
 
 interface Props {
   songs: {
@@ -42,18 +43,32 @@ const App: React.FC = () => {
     };
     fetchData();
   }, []);
-  
+
 
   return (
     <div className="App">
       <NavBar />
-      <h2>Featured Moods: </h2>
-      <FeaturedMoods
-        songs={appState.songs}
-        moods={appState.moods}
-      />
-      <MoodForm moods={appState.moods} setAppState={setAppState} songs={appState.songs} />
-      
+      <Switch>
+        <Route path="/" render={() =>
+          <div>
+            <h2>Featured Moods: </h2>
+            <FeaturedMoods
+              songs={appState.songs}
+              moods={appState.moods}
+            />
+            <MoodForm moods={appState.moods} setAppState={setAppState} songs={appState.songs} />
+          </div>
+        } />
+        <Route
+          path='/:mood' render={() =>
+            <div>
+              <SongsContainer filteredSongs={appState.songs} />
+
+            </div>
+
+          } />
+      </Switch>
+
     </div>
   );
 
