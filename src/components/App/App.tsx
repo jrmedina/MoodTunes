@@ -68,7 +68,7 @@ const App: React.FC = () => {
           path="/"
           render={() => (
             <div>
-              <h2>Featured Moods: </h2>
+              <h2 className='featured-moods'>Featured Moods</h2>
               <FeaturedMoods songs={appState.songs} moods={appState.moods} />
               <MoodForm
                 moods={appState.moods}

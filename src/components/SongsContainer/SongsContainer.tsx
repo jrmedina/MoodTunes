@@ -1,3 +1,4 @@
+import './SongsContainer.css'
 import React, { useState, useEffect } from "react";
 import { json } from "stream/consumers";
 import SingleSong from "../SingleSong/SingleSong";
@@ -30,7 +31,7 @@ const SongsContainer: React.FC<Props> = ({ filteredSongs }) => {
   });
 
   return (
-    <div>
+    <div className="song-container">
       {songCards}
     </div>
   );

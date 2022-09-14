@@ -1,3 +1,4 @@
+import './MoodForm.css'
 import React from "react";
 import { Link } from "react-router-dom";
 
@@ -50,15 +51,11 @@ const MoodForm: React.FC<Props> = ({ moods, setAppState, songs }) => {
   };
 
   return (
-    <form>
-      <select onChange={(e) => handleChange(e)} value={mood.mood}>
-        <option value="" disabled>
-          Select Your Mood
-        </option>
+    <form className='dropdown-container'>
+      <select onChange={(e) => handleChange(e)} value={mood.mood} className='dropdown'>
+        <option value="" disabled>Select Your Mood</option>
         {moodOptions}
       </select>
-
-
 
       {/* potential work around...maybe getting tangled w app state changes */}
 
@@ -71,7 +68,7 @@ const MoodForm: React.FC<Props> = ({ moods, setAppState, songs }) => {
       </select> */}
 
       <Link to={`/results`} onClick={handleClick}>
-        Submit
+        <button className='choose-mood-button'>Search Mood</button>
       </Link>
     </form>
   );
