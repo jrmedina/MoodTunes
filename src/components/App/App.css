@@ -7,19 +7,18 @@
   text-align: center;
   height: 100vh;
   /* font-family: Epidemic, sans-serif; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-h1{
-  font-family: title;
-  font-size: 6em;
-  letter-spacing: 0.1em;
-  margin: 0%;
-  padding-top:20px;
-  padding-bottom:20px;
-  color: rgba(245, 245, 245, 0.7);
-  text-shadow: 1px 6px 5px rgb(255, 105, 180);
+.featured-moods {
+  display: flex;
+  justify-self: flex-start;
+  margin-left: 11.5%;
+  margin-bottom: 1%;
 }
 
-h1:hover {
-  cursor:default;
+.featured-container {
+  padding: 20px;
 }

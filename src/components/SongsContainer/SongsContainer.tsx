@@ -1,3 +1,4 @@
+import './SongsContainer.css'
 import React, { useState, useEffect } from "react";
 import { json } from "stream/consumers";
 import SingleSong from "../SingleSong/SingleSong";
@@ -18,19 +19,21 @@ const SongsContainer: React.FC<Props> = ({ filteredSongs }) => {
   const songCards = filteredSongs.map((song) => {
     return (
       <SingleSong
-        id={song.id}
-        title={song.title}
-        artist={song.artist}
-        urlKey={song.urlKey}
-        genres={song.genres}
-        searchTerms={song.searchTerms}
-        key={song.id}
+      id={song.id}
+      title={song.title}
+      artist={song.artist}
+      urlKey={song.urlKey}
+      genres={song.genres}
+      searchTerms={song.searchTerms}
+      key={song.id}
       />
-    );
+      
+      );
   });
 
   return (
-    <div>
+    <div className="song-container">
+      <h4>Here's some $$ Dreamy $$ Tunes to match your Mood!</h4>
       {songCards}
     </div>
   );
