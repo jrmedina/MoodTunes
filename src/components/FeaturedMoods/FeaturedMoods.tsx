@@ -11,16 +11,17 @@ interface Props {
     artist: string;
     urlKey: string;
     genres: string[];
-    searchTerms?: string[];
+    searchTerms: string[];
   }[];
   moods: {
     id: number;
     title: string;
     img: string;
   }[];
+  setAppState: React.Dispatch<React.SetStateAction<any>>;
 }
 
-const FeaturedMoods: React.FC<Props> = ({ songs, moods }) => {
+const FeaturedMoods: React.FC<Props> = ({ songs, moods, setAppState }) => {
   const moodMusic = moods.map((mood) => {
     return (
       <SingleMood
@@ -28,6 +29,8 @@ const FeaturedMoods: React.FC<Props> = ({ songs, moods }) => {
         id={mood.id}
         title={mood.title}
         image={mood.img}
+        songs={songs}
+        setAppState={setAppState}
       />
     );
   });

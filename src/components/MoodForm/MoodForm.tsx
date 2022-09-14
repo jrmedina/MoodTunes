@@ -41,13 +41,10 @@ const MoodForm: React.FC<Props> = ({ moods, setAppState, songs }) => {
   };
 
   const handleClick = () => {
-    console.log(mood.mood);
     const filtered = songs.filter((song) =>
       song.searchTerms.includes(mood.mood.toLowerCase())
     );
     setAppState({ songs: filtered, });
-        
-
   };
 
   return (
