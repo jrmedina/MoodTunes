@@ -1,13 +1,13 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React from "react";
+import { Link } from "react-router-dom";
 
 interface Props {
   moods: {
     id: number;
     title: string;
     img: string;
-  }[]
-  setAppState: React.Dispatch<React.SetStateAction<any>>
+  }[];
+  setAppState: React.Dispatch<React.SetStateAction<any>>;
   songs: {
     id: number;
     title: string;
@@ -15,46 +15,66 @@ interface Props {
     urlKey: string;
     genres: string[];
     searchTerms: string[];
-  }[],
+  }[];
 }
 interface FormProps {
   mood: string;
+  quantity: string;
 }
 
 const MoodForm: React.FC<Props> = ({ moods, setAppState, songs }) => {
-  const [mood, setMood] = React.useState<FormProps>({
-    mood: ''
-  })
-
-  const moodOptions = moods.map(mood => {
 
 
+  const [mood, setMood] = React.useState<FormProps>({ mood: "", quantity: '' });
+
+  const moodOptions = moods.map((mood) => {
     return (
-      <option key={mood.id} value={`${mood.title}`}>{mood.title}</option>
-    )
-  })
+      <option key={mood.id} value={`${mood.title}`}>
+        {mood.title}
+      </option>
+    );
+  });
   const handleChange = (event: React.ChangeEvent<HTMLSelectElement>): void => {
-    setMood({ mood: event.target.value })
+    event.preventDefault();
+    setMood({ mood: event.target.value, quantity: event.target.value });
+  };
 
+  const handleClick = () => {
+    console.log(mood.mood);
+    const filtered = songs.filter((song) =>
+      song.searchTerms.includes(mood.mood.toLowerCase())
+    );
+    setAppState({ songs: filtered, });
+        
 
-
-    const filteredSongs = songs.filter(song => song.searchTerms.includes(event.target.value.toLowerCase()))
-    console.log('THESE ARE FILTERED', filteredSongs)
-    // setAppState({ songs: filteredSongs })
-
-  }
+  };
 
   return (
-    <form >
-      <label>Choose Your Mood: </label>
-      <Link to={`/${mood.mood}`}>
-        <select onChange={handleChange} value={mood.mood}>
-          {/* <option value='' disabled hidden>Select Your Mood</option> */}
-          {moodOptions}
-        </select>
+    <form>
+      <select onChange={(e) => handleChange(e)} value={mood.mood}>
+        <option value="" disabled>
+          Select Your Mood
+        </option>
+        {moodOptions}
+      </select>
+
+
+
+      {/* potential work around...maybe getting tangled w app state changes */}
+
+      {/* <select onChange={(e) => handleChange(e)} value={mood.quantity}>
+        <option value="" disabled>
+          Select How Many
+        </option>
+        <option value="all">All</option>
+        <option value="random">Random</option>
+      </select> */}
+
+      <Link to={`/results`} onClick={handleClick}>
+        Submit
       </Link>
     </form>
-  )
-}
+  );
+};
 
-export default MoodForm
+export default MoodForm;
