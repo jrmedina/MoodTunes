@@ -35,6 +35,19 @@ describe('App', () => {
     cy.get('.single-mood').find('img').first().should('have.class', "mood-img") 
     cy.get('.single-mood').first().find('h2').contains('Happy')
   })
+  it('should render mood options for a user to select', () => {
+    cy.get('select').select('Happy').should('have.value', "Happy")
+    cy.get('select').select('High AF').should('have.value', "High AF")
+    cy.get('select').select('Sexy').should('have.value', "Sexy")
+  })
+  it('should render a form', () => {
+    cy.get('form').should("exist")
+  })
+  it('should change URL when the user selects a mood', () => {
+    cy.get('select').select('Sexy')
+    cy.get('a').click()
+  })
+
 })
 // cy.get('.movie-trailer')
 // 			.should('exist', 'iframe')
