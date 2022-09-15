@@ -2,25 +2,26 @@ import "./FeaturedMoods.css";
 import React from "react";
 import SingleMood from "../SingleMood/SingleMood";
 import "./FeaturedMoods.css";
+import { MoodProps } from '../../model'
 
-interface Props {
-  songs: {
-    id: number;
-    title: string;
-    artist: string;
-    urlKey: string;
-    genres: string[];
-    searchTerms: string[];
-  }[];
-  moods: {
-    id: number;
-    title: string;
-    img: string;
-  }[];
-  handleMood: React.Dispatch<React.SetStateAction<any>>;
-}
+// interface MoodProps {
+//   songs: {
+//     id: number;
+//     title: string;
+//     artist: string;
+//     urlKey: string;
+//     genres: string[];
+//     searchTerms: string[];
+//   }[];
+//   moods: {
+//     id: number;
+//     title: string;
+//     img: string;
+//   }[];
+//   handleMood: React.Dispatch<React.SetStateAction<any>>;
+// }
 
-const FeaturedMoods: React.FC<Props> = ({ songs, moods, handleMood }) => {
+const FeaturedMoods: React.FC<MoodProps> = ({ songs, moods, handleMood }) => {
   const moodMusic = moods
     .map((mood) => {
       return (

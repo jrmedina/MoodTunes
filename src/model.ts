@@ -1,43 +1,54 @@
-import React from "react";
+// import React from "react";
 
-export interface SingleSongProps{
-    id?: number;
-    title: string;
-    artist: string;
-    urlKey: string;
-    genres: string[];
-    searchTerms?: string[];
+interface SongProp {
+  id?: number;
+  title: string;
+  artist: string;
+  urlKey: string;
+  genres: string[];
+  searchTerms: string[];
 }
 
-export interface SingleMoodProps{
-    id?: number;
-    title: string;
-    image: string;
+interface MoodProp {
+  id: number;
+  title: string;
+  img: string;
 }
 
-
-
-export interface SongsProps{
-    song: SingleSongProps;
-    setSong: (value: React.SetStateAction<SingleSongProps | undefined>) => void;
+export interface SingleSongProps {
+  id?: number;
+  title: string;
+  artist: string;
+  urlKey: string;
+  genres: string[];
+  searchTerms?: string[];
 }
 
-export interface MoodsProps{
-    mood: SingleMoodProps;
-    setMood: (value: React.SetStateAction<SingleMoodProps | undefined>) => void;
+export interface SingleMoodProps {
+  id: number;
+  title: string;
+  image: string;
+  songs: SongProp[];
+  handleMood: React.Dispatch<React.SetStateAction<any>>;
 }
 
-
-
-export interface AppProps{
-    songs: SongsProps[];
-    setSongs: (value: React.SetStateAction<SongsProps[]>) => void;
-    moods: MoodsProps[];
-    setMoods: (value: React.SetStateAction<MoodsProps[]>) => void;
+export interface AppProps {
+  songs: SongProp[];
+  moods: MoodProp[];
+  currentMood?: string;
 }
 
-export interface FeaturedMoodsProps{
-    moods: MoodsProps[];
-    setMoods: (value: React.SetStateAction<MoodsProps[]>) => void;
-    setAppState: (value: React.SetStateAction<AppProps | undefined>) => void;
-};
+export interface MoodProps {
+  moods: MoodProp[];
+  songs: SongProp[];
+  handleMood: React.Dispatch<React.SetStateAction<any>>;
+}
+
+export interface SetMoodProps {
+  mood: string;
+}
+
+export interface SongsContainerProps {
+  filteredSongs: SongProp[];
+  currentMood: string | undefined;
+}

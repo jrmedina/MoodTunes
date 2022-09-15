@@ -2,19 +2,21 @@ import "./SongsContainer.css";
 import React from "react";
 import SingleSong from "../SingleSong/SingleSong";
 import { Link } from "react-router-dom";
+import { SongsContainerProps } from '../../model'
 
-interface Props {
-  filteredSongs: {
-    id: number;
-    title: string;
-    artist: string;
-    urlKey: string;
-    genres: string[];
-    searchTerms: string[];
-  }[];
-  currentMood: string | undefined;
-}
-const SongsContainer: React.FC<Props> = ({ filteredSongs, currentMood }) => {
+// interface SongsContainerProps {
+//   filteredSongs: {
+//     id: number;
+//     title: string;
+//     artist: string;
+//     urlKey: string;
+//     genres: string[];
+//     searchTerms: string[];
+//   }[];
+//   currentMood: string | undefined;
+// }
+
+const SongsContainer: React.FC<SongsContainerProps> = ({ filteredSongs, currentMood }) => {
   const songCards = filteredSongs.map((song) => {
     return (
       <SingleSong
