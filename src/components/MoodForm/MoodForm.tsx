@@ -24,7 +24,7 @@ import { MoodProps, SetMoodProps } from '../../model'
 //   mood: string;
 // }
 
-const MoodForm: React.FC<MoodProps> = ({ moods, handleMood, songs }) => {
+const MoodForm: React.FC<MoodProps> = ({ moods, handleMood }) => {
   const [mood, setMood] = React.useState<SetMoodProps>({ mood: "" });
 
   const moodOptions = moods.map((mood) => {
