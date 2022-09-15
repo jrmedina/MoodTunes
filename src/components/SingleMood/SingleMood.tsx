@@ -22,8 +22,8 @@ const SingleMood: React.FC<SingleMoodProps> = ({
           id={title}
           alt={title}
         />
-        <h2>{title}</h2>
       </Link>
+        <h2>{title}</h2>
     </div>
   );
 };
