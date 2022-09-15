@@ -18,10 +18,10 @@ interface Props {
     title: string;
     img: string;
   }[];
-  setAppState: React.Dispatch<React.SetStateAction<any>>;
+  handleMood: React.Dispatch<React.SetStateAction<any>>;
 }
 
-const FeaturedMoods: React.FC<Props> = ({ songs, moods, setAppState }) => {
+const FeaturedMoods: React.FC<Props> = ({ songs, moods, handleMood }) => {
   const moodMusic = moods.map((mood) => {
     return (
       <SingleMood
@@ -30,12 +30,12 @@ const FeaturedMoods: React.FC<Props> = ({ songs, moods, setAppState }) => {
         title={mood.title}
         image={mood.img}
         songs={songs}
-        setAppState={setAppState}
+        handleMood={handleMood}
       />
     );
   });
   const featuredMoods = moodMusic.slice(0, 10);
-  
+
   return <div className="moods-container">{featuredMoods}</div>;
 };
 

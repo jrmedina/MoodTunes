@@ -1,18 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { sortAndDeduplicateDiagnostics } from "typescript";
 import "./App.css";
 import MoodForm from "../MoodForm/MoodForm";
 import FeaturedMoods from "../FeaturedMoods/FeaturedMoods";
 import SongsContainer from "../SongsContainer/SongsContainer";
 import NavBar from "../NavBar/NavBar";
 import Footer from "../Footer/Footer";
-import {
-  SingleSongProps,
-  SongsProps,
-  SingleMoodProps,
-  MoodsProps,
-  AppProps,
-} from "../../model";
 import { Switch, Route } from "react-router-dom";
 
 interface Props {
@@ -29,13 +21,15 @@ interface Props {
     title: string;
     img: string;
   }[];
+  currentMood?: string;
 }
 
 const App: React.FC = () => {
-  const [appState, setAppState] = useState<Props>({ songs: [], moods: [] });
-
-  // const handleChange = (event: React.ChangeEvent<HTMLSelectElement>): void => {
-  //   setAppState({ songs: filtered })
+  const [appState, setAppState] = useState<Props>({
+    songs: [],
+    moods: [],
+    currentMood: "",
+  });
 
   useEffect(() => {
     const fetchData = async () => {
@@ -50,6 +44,17 @@ const App: React.FC = () => {
     fetchData();
   }, []);
 
+  const handleMood = (mood: string): void => {
+    const results = appState.songs.filter((song) =>
+      song.searchTerms.includes(mood.toLowerCase())
+    );
+    setAppState({
+      songs: results,
+      moods: [...appState.moods],
+      currentMood: mood,
+    });
+  };
+
   return (
     <div className="App">
       <NavBar />
@@ -59,31 +64,34 @@ const App: React.FC = () => {
           path="/results"
           render={() => (
             <div>
-              <SongsContainer filteredSongs={appState.songs} />
+              <SongsContainer
+                filteredSongs={appState.songs}
+                currentMood={appState.currentMood}
+              />
             </div>
           )}
         />
 
         <Route
-         
           path="/"
           render={() => (
             <div>
-              <h2 className='featured-moods'>Featured Moods</h2>
-              <FeaturedMoods 
-                songs={appState.songs} 
-                moods={appState.moods}
-                setAppState={setAppState} />
-              <MoodForm
-                moods={appState.moods}
-                setAppState={setAppState}
+              <h2 className="featured-moods">Featured Moods</h2>
+              <FeaturedMoods
+                handleMood={handleMood}
                 songs={appState.songs}
+                moods={appState.moods}
+              />
+              <MoodForm
+                handleMood={handleMood}
+                songs={appState.songs}
+                moods={appState.moods}
               />
             </div>
           )}
         />
       </Switch>
-        <Footer />
+      <Footer />
     </div>
   );
 };
