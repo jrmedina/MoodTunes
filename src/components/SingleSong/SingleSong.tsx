@@ -2,7 +2,6 @@ import "./SingleSong.css";
 import React from "react";
 import { SingleSongProps } from "../../model";
 import ReactPlayer from "react-player";
-import { Link } from "react-router-dom";
 
 const SingleSong: React.FC<SingleSongProps> = ({
   title,

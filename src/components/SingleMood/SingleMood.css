@@ -1,5 +1,4 @@
 .single-mood {
-  /* border: red solid 1px; */
   height: 10em;
   width: 17%;
   background-color: rgba(0, 0, 0, 0.85);
@@ -15,7 +14,6 @@ h2 {
   letter-spacing: 0.12em;
   margin: 2%;
   color: rgba(245, 245, 245, 0.9);
-  /* text-shadow: 1px 6px 5px rgba(255, 105, 180, 0.5); */
 }
 
 img {

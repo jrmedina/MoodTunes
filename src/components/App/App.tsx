@@ -55,6 +55,8 @@ const App: React.FC = () => {
     });
   };
 
+
+
   return (
     <div className="App">
       <NavBar />
@@ -67,6 +69,7 @@ const App: React.FC = () => {
               <SongsContainer
                 filteredSongs={appState.songs}
                 currentMood={appState.currentMood}
+              
               />
             </div>
           )}

@@ -16,9 +16,6 @@ interface SingleMoodProps {
   }[];
   handleMood: React.Dispatch<React.SetStateAction<any>>;
 }
-interface FormProps {
-  mood: string;
-}
 
 const SingleMood: React.FC<SingleMoodProps> = ({
   title,
