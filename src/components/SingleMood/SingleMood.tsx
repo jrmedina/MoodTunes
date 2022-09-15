@@ -37,6 +37,7 @@ const SingleMood: React.FC<SingleMoodProps> = ({
           className="mood-img"
           src={image}
           id={title}
+          alt={title}
         />
         <h2>{title}</h2>
       </Link>
