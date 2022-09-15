@@ -1,20 +1,22 @@
 import "./SingleSong.css";
-import React from 'react'
-import { SingleSongProps } from '../../model'
+import React from "react";
+import { SingleSongProps } from "../../model";
 import ReactPlayer from "react-player";
 
-
-
-const SingleSong: React.FC<SingleSongProps> = ({id, title, artist, urlKey, genres, searchTerms}) => {
- 
+const SingleSong: React.FC<SingleSongProps> = ({
+  title,
+  artist,
+  urlKey,
+  genres,
+}) => {
   return (
     <div className="singleSong">
-      <div className='song-details'>
+      <div className="song-details">
         <p className="title">"{title}"</p>
         <p className="artist">{artist}</p>
-        <p className="genres">{genres.join(', ')}</p>
+        <p className="genres">{genres.join(", ")}</p>
       </div>
-      <div className='player-container'>
+      <div className="player-container">
         <ReactPlayer
           url={`https://www.youtube.com/watch?v=${urlKey}`}
           frameBorder="0"
@@ -22,14 +24,12 @@ const SingleSong: React.FC<SingleSongProps> = ({id, title, artist, urlKey, genre
           allowFullScreen
           title="Embedded youtube"
           className="player"
-          height='100%'
-          width='100%'
+          height="100%"
+          width="100%"
         />
       </div>
     </div>
   );
-}
+};
 
-export default SingleSong
-  
-  
+export default SingleSong;

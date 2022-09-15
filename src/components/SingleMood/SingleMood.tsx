@@ -1,6 +1,6 @@
 import "./SingleMood.css";
 import { Link } from "react-router-dom";
-import React, { useState } from "react";
+import React from "react";
 
 interface SingleMoodProps {
   id: number;
@@ -14,38 +14,29 @@ interface SingleMoodProps {
     genres: string[];
     searchTerms: string[];
   }[];
-  setAppState: React.Dispatch<React.SetStateAction<any>>;
-}
-
-interface FormProps {
-  mood: string;
+  handleMood: React.Dispatch<React.SetStateAction<any>>;
 }
 
 const SingleMood: React.FC<SingleMoodProps> = ({
-  id,
   title,
   image,
-  songs,
-  setAppState,
+  handleMood,
 }) => {
-
-  const handleChange = (e: React.MouseEvent<HTMLImageElement>) => {  
-    let filterResults = songs.filter((song) =>
-      song.searchTerms.includes(e.currentTarget.id.toLowerCase())
-    );
-    setAppState({ songs: filterResults });
-  }
+  const handleChange = (e: React.MouseEvent<HTMLImageElement>) => {
+    handleMood(e.currentTarget.id);
+  };
 
   return (
     <div className="single-mood">
-      <Link to={`/results`} >
-      <img
-        onClick={handleChange}
-        className="mood-img"
-        src={image}
-        id={title}
-      />
-      <h2>{title}</h2>
+      <Link to={`/results`}>
+        <img
+          onClick={handleChange}
+          className="mood-img"
+          src={image}
+          id={title}
+          alt={title}
+        />
+        <h2>{title}</h2>
       </Link>
     </div>
   );
