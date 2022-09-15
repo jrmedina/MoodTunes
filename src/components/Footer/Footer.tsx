@@ -1,13 +1,16 @@
-import React from 'react'
-import { AiFillLinkedin, AiFillGithub } from 'react-icons/ai';
-import "./Footer.css"
+import React from "react";
+import { AiFillLinkedin, AiFillGithub } from "react-icons/ai";
+import "./Footer.css";
 
-const Footer = () => {
+const Footer: React.FC = () => {
   return (
     <div className="footer">
       <div className="personContainer">
         <p>Joshua Medina</p>
-        <a className="linkedinAnchor" href="https://www.linkedin.com/in/joshua-medina/">
+        <a
+          className="linkedinAnchor"
+          href="https://www.linkedin.com/in/joshua-medina/"
+        >
           <AiFillLinkedin />
         </a>
 
@@ -17,7 +20,10 @@ const Footer = () => {
       </div>
       <div className="personContainer">
         <p>Michael Martinelli</p>
-        <a className="linkedinAnchor" href="https://www.linkedin.com/in/michael-martinelli-7230b5237/">
+        <a
+          className="linkedinAnchor"
+          href="https://www.linkedin.com/in/michael-martinelli-7230b5237/"
+        >
           <AiFillLinkedin />
         </a>
         <a className="githubAnchor" href="https://github.com/mmartinelli22">
@@ -26,7 +32,10 @@ const Footer = () => {
       </div>
       <div className="personContainer">
         <p>Jordan Farelli</p>
-        <a className="linkedinAnchor" href="https://www.linkedin.com/in/jordan-farelli/">
+        <a
+          className="linkedinAnchor"
+          href="https://www.linkedin.com/in/jordan-farelli/"
+        >
           <AiFillLinkedin />
         </a>
 
@@ -36,7 +45,10 @@ const Footer = () => {
       </div>
       <div className="personContainer">
         <p>Ana Bennett</p>
-        <a className="linkedinAnchor" href="https://www.linkedin.com/in/ana-bennett/">
+        <a
+          className="linkedinAnchor"
+          href="https://www.linkedin.com/in/ana-bennett/"
+        >
           <AiFillLinkedin />
         </a>
 
@@ -45,8 +57,7 @@ const Footer = () => {
         </a>
       </div>
     </div>
+  );
+};
 
-  )
-}
-
-export default Footer
+export default Footer;

@@ -1,11 +1,11 @@
 .song-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 25px;
-    padding-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+  padding-bottom: 30px;
 }
 
 h4 {
-    color: whitesmoke;
+  color: whitesmoke;
 }

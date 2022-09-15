@@ -1,6 +1,6 @@
 import "./SingleMood.css";
 import { Link } from "react-router-dom";
-import React, { useState } from "react";
+import React from "react";
 
 interface SingleMoodProps {
   id: number;
@@ -20,12 +20,15 @@ interface FormProps {
   mood: string;
 }
 
-const SingleMood: React.FC<SingleMoodProps> = ({title, image, handleMood }) => {
-  
+const SingleMood: React.FC<SingleMoodProps> = ({
+  title,
+  image,
+  handleMood,
+}) => {
   const handleChange = (e: React.MouseEvent<HTMLImageElement>) => {
     handleMood(e.currentTarget.id);
   };
-  
+
   return (
     <div className="single-mood">
       <Link to={`/results`}>
