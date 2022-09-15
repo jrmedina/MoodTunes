@@ -21,7 +21,7 @@ import { MoodProps } from '../../model'
 //   handleMood: React.Dispatch<React.SetStateAction<any>>;
 // }
 
-const FeaturedMoods: React.FC<MoodProps> = ({ songs, moods, handleMood }) => {
+const FeaturedMoods: React.FC<MoodProps> = ({ moods, handleMood }) => {
   const moodMusic = moods
     .map((mood) => {
       return (
@@ -30,7 +30,6 @@ const FeaturedMoods: React.FC<MoodProps> = ({ songs, moods, handleMood }) => {
           id={mood.id}
           title={mood.title}
           image={mood.img}
-          songs={songs}
           handleMood={handleMood}
         />
       );

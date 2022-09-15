@@ -3,21 +3,6 @@ import { Link } from "react-router-dom";
 import React from "react";
 import { SingleMoodProps } from '../../model'
 
-// interface SingleMoodProps {
-//   id: number;
-//   title: string;
-//   image: string;
-//   songs: {
-//     id: number;
-//     title: string;
-//     artist: string;
-//     urlKey: string;
-//     genres: string[];
-//     searchTerms: string[];
-//   }[];
-//   handleMood: React.Dispatch<React.SetStateAction<any>>;
-// }
-
 const SingleMood: React.FC<SingleMoodProps> = ({
   title,
   image,

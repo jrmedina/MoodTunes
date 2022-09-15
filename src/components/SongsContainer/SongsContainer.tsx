@@ -4,19 +4,7 @@ import SingleSong from "../SingleSong/SingleSong";
 import { Link } from "react-router-dom";
 import { SongsContainerProps } from '../../model'
 
-// interface SongsContainerProps {
-//   filteredSongs: {
-//     id: number;
-//     title: string;
-//     artist: string;
-//     urlKey: string;
-//     genres: string[];
-//     searchTerms: string[];
-//   }[];
-//   currentMood: string | undefined;
-// }
-
-const SongsContainer: React.FC<SongsContainerProps> = ({ filteredSongs, currentMood }) => {
+const SongsContainer: React.FC<SongsContainerProps> = ({ filteredSongs, currentMood, resetResultState }) => {
   const songCards = filteredSongs.map((song) => {
     return (
       <SingleSong
@@ -34,7 +22,7 @@ const SongsContainer: React.FC<SongsContainerProps> = ({ filteredSongs, currentM
   return (
     <div className="song-container">
       <Link to="/">
-        <button className="choose-mood-button">Home</button>
+        <button onClick={resetResultState} className="home-button">Home</button>
       </Link>
       <h4>Here are some {currentMood} Tunes to match your Mood!</h4>
       {songCards}

@@ -6,32 +6,18 @@ import SongsContainer from "../SongsContainer/SongsContainer";
 import NavBar from "../NavBar/NavBar";
 import Footer from "../Footer/Footer";
 import { Switch, Route } from "react-router-dom";
-import { AppProps } from '../../model'
+import { AppProps, ResultProps } from '../../model'
 
-// interface AppProps {
-//   songs: {
-//     id: number;
-//     title: string;
-//     artist: string;
-//     urlKey: string;
-//     genres: string[];
-//     searchTerms: string[];
-//   }[];
-//   moods: {
-//     id: number;
-//     title: string;
-//     img: string;
-//   }[];
-//   currentMood?: string;
-// }
 
 const App: React.FC = () => {
   const [appState, setAppState] = useState<AppProps>({
     songs: [],
     moods: [],
-    currentMood: "",
   });
-
+  const [resultState, setResultState] = useState<ResultProps>({
+    currentMood: "",
+    songs: []
+  })
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -49,13 +35,18 @@ const App: React.FC = () => {
     const results = appState.songs.filter((song) =>
       song.searchTerms.includes(mood.toLowerCase())
     );
-    setAppState({
+    setResultState({
       songs: results,
-      moods: [...appState.moods],
       currentMood: mood,
     });
   };
+  const resetResultState = () => {
+    setResultState({
+      songs: [],
+      currentMood: "",
+    });
 
+  }
 
 
   return (
@@ -68,9 +59,9 @@ const App: React.FC = () => {
           render={() => (
             <div>
               <SongsContainer
-                filteredSongs={appState.songs}
-                currentMood={appState.currentMood}
-              
+                resetResultState={resetResultState}
+                filteredSongs={resultState.songs}
+                currentMood={resultState.currentMood}
               />
             </div>
           )}
@@ -83,12 +74,10 @@ const App: React.FC = () => {
               <h2 className="featured-moods">Featured Moods</h2>
               <FeaturedMoods
                 handleMood={handleMood}
-                songs={appState.songs}
                 moods={appState.moods}
               />
               <MoodForm
                 handleMood={handleMood}
-                songs={appState.songs}
                 moods={appState.moods}
               />
             </div>
