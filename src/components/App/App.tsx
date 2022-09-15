@@ -6,26 +6,27 @@ import SongsContainer from "../SongsContainer/SongsContainer";
 import NavBar from "../NavBar/NavBar";
 import Footer from "../Footer/Footer";
 import { Switch, Route } from "react-router-dom";
+import { AppProps } from '../../model'
 
-interface Props {
-  songs: {
-    id: number;
-    title: string;
-    artist: string;
-    urlKey: string;
-    genres: string[];
-    searchTerms: string[];
-  }[];
-  moods: {
-    id: number;
-    title: string;
-    img: string;
-  }[];
-  currentMood?: string;
-}
+// interface AppProps {
+//   songs: {
+//     id: number;
+//     title: string;
+//     artist: string;
+//     urlKey: string;
+//     genres: string[];
+//     searchTerms: string[];
+//   }[];
+//   moods: {
+//     id: number;
+//     title: string;
+//     img: string;
+//   }[];
+//   currentMood?: string;
+// }
 
 const App: React.FC = () => {
-  const [appState, setAppState] = useState<Props>({
+  const [appState, setAppState] = useState<AppProps>({
     songs: [],
     moods: [],
     currentMood: "",
