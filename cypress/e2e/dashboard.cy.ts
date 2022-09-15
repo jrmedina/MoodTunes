@@ -1,32 +1,16 @@
 
 describe('App', () => {
   beforeEach(() => {
-    // cy.intercept("GET", "http://localhost:3001/", {
-    //   statusCode: 200,
-    //   body: [
-    //     {
-    //       id: 27,
-    //       title: "Sneaking",
-    //       img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRomK6c1C-ls2QaArwg5b6FCzmR0k93r13cwg&usqp=CAU",
-    //     },
-    //     {
-    //       id: 28,
-    //       title: "Suspense",
-    //       img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRomK6c1C-ls2QaArwg5b6FCzmR0k93r13cwg&usqp=CAU",
-    //     },
-    //   ],
-    // });
+    cy.intercept("GET", "http://localhost:3001/api/v1", {
+    fixtures: "MoodsData.json"
+    });
     cy.visit("http://localhost:3000")
   });
   it('should render a navbar on load', () => {
     cy.get('.nav-container').contains('MoodTunes')
     cy.get('.nav-container').find("img").should('have.class','skull' )
-
   })
-  // it('should render stubbed mood data', () => {
-  //   cy.get('.App')
-  //   // cy.get('.App').get('.moods-container').should('exist', '.single-mood').should('have.length', 1) //why are you only one >.<
-  // })
+ 
   it('should render featured moods on load', () => {
     cy.get('.single-mood').should('have.length', 10)
     cy.get('.App').contains('Featured Moods')
@@ -45,13 +29,33 @@ describe('App', () => {
   })
   it('should change URL when the user selects a mood', () => {
     cy.get('select').select('Sexy')
-    cy.get('a').click()
+    cy.get('button').click()
     cy.url().should("be.equal", "http://localhost:3000/results");
   })
-
+  it('should render results when a mood is selected', () => {
+    cy.get('select').select('Sexy')
+    cy.get('button').click()
+    cy.get('.singleSong').should('have.length', 9)
+  })
+  it('should render song details', () => {
+    cy.get('select').select('Sexy')
+    cy.get('button').click()
+    cy.get('.singleSong').first().contains('Cold Little Heart')
+    cy.get('.singleSong').first().contains('Michael Kiwanuka')
+    cy.get('.singleSong').first().contains('Soul')
+    cy.get('.player-container').should('exist')
+  })
+  it('should have a way to return back home', () => {
+    cy.get('select').select('Sexy')
+    cy.get('button').click()
+    cy.get('.home-button').click()
+    cy.url().should("be.equal", "http://localhost:3000/");
+  })
+  it('should render a footer with team partners corresponding social networks', () => {
+    cy.get('.footer').contains("Ana Bennett")
+    cy.get('.linkedinAnchor').first().should("have.attr", "href")
+      .and("equal", "https://www.linkedin.com/in/joshua-medina/");
+    cy.get('.githubAnchor').first().should("have.attr", "href")  
+      .and("equal", "https://github.com/jrmedina")
+  })
 })
-// cy.get('.movie-trailer')
-// 			.should('exist', 'iframe')
-// 			.get('iframe')
-// 			.should('have.attr', 'src')
-// 			.should('include', '01ON04GCwKs')
