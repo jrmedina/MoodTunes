@@ -24,7 +24,9 @@ const SongsContainer: React.FC<SongsContainerProps> = ({ filteredSongs, currentM
       <Link to="/">
         <button onClick={resetResultState} className="home-button">Home</button>
       </Link>
+      {filteredSongs.length ? 
       <h4>Here are some {currentMood} Tunes to match your Mood!</h4>
+       : <h4>Looks like there are no songs!</h4>}
       {songCards}
     </div>
   );
