@@ -25,7 +25,24 @@ h1:hover {
   align-self: center;
 }
 
+
+@keyframes spinning {
+  from {
+    transform: rotate(0deg)
+  }
+
+  to {
+    transform: rotate(360deg)
+  }
+}
+
 .skull {
   height: 6em;
   width: 6em;
+  animation-name: spinning;
+  animation-duration: 15s;
+  animation-iteration-count: infinite;
+  /* linear | ease | ease-in | ease-out | ease-in-out */
+  animation-timing-function: linear;
+  padding: 6px;
 }
