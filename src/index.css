@@ -8,9 +8,11 @@
 }
 
 body {
-  background-image: linear-gradient(to bottom, #2e1a47, rgba(46, 26, 71, 0.92));
+  /* background-image: linear-gradient(to bottom, #2e1a47, rgba(46, 26, 71, 0.92)); */
+  background: rgb(12, 11, 11);
   height: 100%;
   margin: 0;
   background-repeat: no-repeat;
   background-attachment: fixed;
+  
 }

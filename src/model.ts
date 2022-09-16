@@ -1,3 +1,4 @@
+import { MouseEventHandler } from "react";
 export interface SingleSongProps {
   id?: number;
   title: string;
@@ -17,7 +18,7 @@ export interface SingleMoodProps {
   id: number;
   title: string;
   image: string;
-  handleMood: React.Dispatch<React.SetStateAction<any>>;
+  handleMood: React.Dispatch<React.SetStateAction<string>>;
 }
 
 export interface AppProps {
@@ -38,7 +39,7 @@ export interface SetMoodProps {
 export interface SongsContainerProps {
   filteredSongs: SingleSongProps[];
   currentMood: string | undefined;
-  resetResultState: React.Dispatch<React.SetStateAction<any>>;
+  resetResultState: MouseEventHandler<HTMLButtonElement>;
 }
 export interface ResultProps {
   currentMood: string;

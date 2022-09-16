@@ -23,7 +23,7 @@ const SongsContainer: React.FC<SongsContainerProps> = ({
       />
     );
   });
-console.log('FILTERED: ', filteredSongs)
+
   return (
     <div className="song-container">
       <Link to="/">

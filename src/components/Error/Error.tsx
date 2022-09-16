@@ -7,8 +7,8 @@ const Error = () => {
     return (
         <div className="errorDiv">
             <div>
-                <p className="errorMessage">Sorry, you got to this page.</p>
-                <p className="errorMessage">Please try again.</p>
+                <p className="errorMessage">Sorry to kill your mood.</p>
+                <p className="errorMessage">Something went wrong.</p>
                 <Link to="/">
                 <button className="home-button">GO BACK</button>
                 </Link>

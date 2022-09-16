@@ -31,8 +31,10 @@
 .errorDiv {
     display: flex;
     flex-direction: row;
+ 
 }
 
 .errorMessage {
     font-size: 5em;
+    color: rgba(245, 245, 245, 0.7);
 }

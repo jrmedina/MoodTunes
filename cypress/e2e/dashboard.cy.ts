@@ -35,15 +35,13 @@ describe('App', () => {
   it('should render results when a mood is selected', () => {
     cy.get('select').select('Sexy')
     cy.get('button').click()
-    cy.get('.singleSong').should('have.length', 9)
+    cy.get('.singleSong').should('have.length', 12)
   })
   it('should render song details', () => {
     cy.get('select').select('Sexy')
     cy.get('button').click()
-    cy.get('.singleSong').first().contains('Cold Little Heart')
-    cy.get('.singleSong').first().contains('Michael Kiwanuka')
-    cy.get('.singleSong').first().contains('Soul')
-    cy.get('.player-container').should('exist')
+    cy.get('.singleSong').first().find('iFrame').should('have.attr', "src")
+      .and("equal", "https://open.spotify.com/embed/track/0qprlw0jfsW4H9cG0FFE0Z?utm_source=generator&theme=0")
   })
   it('should have a way to return back home', () => {
     cy.get('select').select('Sexy')
@@ -58,4 +56,11 @@ describe('App', () => {
     cy.get('.githubAnchor').first().should("have.attr", "href")  
       .and("equal", "https://github.com/jrmedina")
   })
+  it('should redirect the user to an error page when the page fails to load', () => {
+    cy.visit("http://localhost:3000/blah")
+    cy.get('.errorMessage').contains('Sorry to kill your mood.')
+    cy.get('button').click()
+    cy.url().should("be.equal", "http://localhost:3000/");
+  })
 })
+

@@ -8,6 +8,7 @@ import MoodForm from "../MoodForm/MoodForm";
 import FeaturedMoods from "../FeaturedMoods/FeaturedMoods";
 import SongsContainer from "../SongsContainer/SongsContainer";
 import Error from "../Error/Error";
+import { fetchData } from "../../apiCalls"
 
 const App: React.FC = () => {
 
@@ -22,18 +23,9 @@ const App: React.FC = () => {
   });
 
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await fetch("http://localhost:3001");
-        const json = await response.json();
-        setAppState({ songs: json.data.songs, moods: json.data.moods });
-      } catch (error) {
-        console.log("error", error);
-      }
-    };
-    fetchData();
-  }, []);
-
+    fetchData().then(json => setAppState({ songs: json.data.songs, moods: json.data.moods }) );
+  });
+ 
   const handleMood = (mood: string): void => {
     const results = appState.songs.filter((song) =>
       song.searchTerms.includes(mood.toLowerCase())
