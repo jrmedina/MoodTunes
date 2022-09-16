@@ -1,3 +1,12 @@
+@font-face {
+  font-family: title;
+  src: url(../src/assets/StyleThief-Mz6w.ttf);
+}
+
+* {
+  font-family: title;
+}
+
 body {
   background-image: linear-gradient(to bottom, #2e1a47, rgba(46, 26, 71, 0.92));
   height: 100%;

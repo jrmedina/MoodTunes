@@ -1,10 +1,15 @@
 import "./SongsContainer.css";
 import React from "react";
-import SingleSong from "../SingleSong/SingleSong";
 import { Link } from "react-router-dom";
-import { SongsContainerProps } from '../../model'
+import SingleSong from "../SingleSong/SingleSong";
+import { SongsContainerProps } from "../../model";
 
-const SongsContainer: React.FC<SongsContainerProps> = ({ filteredSongs, currentMood, resetResultState }) => {
+
+const SongsContainer: React.FC<SongsContainerProps> = ({
+  filteredSongs,
+  currentMood,
+  resetResultState,
+}) => {
   const songCards = filteredSongs.map((song) => {
     return (
       <SingleSong
@@ -18,15 +23,19 @@ const SongsContainer: React.FC<SongsContainerProps> = ({ filteredSongs, currentM
       />
     );
   });
-
+console.log('FILTERED: ', filteredSongs)
   return (
     <div className="song-container">
       <Link to="/">
-        <button onClick={resetResultState} className="home-button">Home</button>
+        <button onClick={resetResultState} className="home-button">
+          Home
+        </button>
       </Link>
-      {filteredSongs.length ? 
-      <h4>Here are some {currentMood} Tunes to match your Mood!</h4>
-       : <h4>Looks like there are no songs!</h4>}
+      {filteredSongs.length ? (
+        <h4>Here are some {currentMood} Tunes to match your Mood!</h4>
+      ) : (
+        <h4>Looks like there are no songs!</h4>
+      )}
       {songCards}
     </div>
   );

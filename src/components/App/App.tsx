@@ -1,23 +1,25 @@
-import React, { useState, useEffect } from "react";
 import "./App.css";
+import { Switch, Route } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { AppProps, ResultProps } from "../../model";
+import NavBar from "../NavBar/NavBar";
+import Footer from "../Footer/Footer";
 import MoodForm from "../MoodForm/MoodForm";
 import FeaturedMoods from "../FeaturedMoods/FeaturedMoods";
 import SongsContainer from "../SongsContainer/SongsContainer";
-import NavBar from "../NavBar/NavBar";
-import Footer from "../Footer/Footer";
-import { Switch, Route } from "react-router-dom";
-import { AppProps, ResultProps } from '../../model'
-
 
 const App: React.FC = () => {
+
   const [appState, setAppState] = useState<AppProps>({
     songs: [],
     moods: [],
   });
+
   const [resultState, setResultState] = useState<ResultProps>({
     currentMood: "",
-    songs: []
-  })
+    songs: [],
+  });
+
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -40,14 +42,13 @@ const App: React.FC = () => {
       currentMood: mood,
     });
   };
+
   const resetResultState = () => {
     setResultState({
       songs: [],
       currentMood: "",
     });
-
-  }
-
+  };
 
   return (
     <div className="App">
@@ -61,28 +62,16 @@ const App: React.FC = () => {
               <SongsContainer
                 resetResultState={resetResultState}
                 filteredSongs={resultState.songs}
-                currentMood={resultState.currentMood}
-              />
-            </div>
-          )}
-        />
-
+                currentMood={resultState.currentMood} />
+            </div> )} />
         <Route
           path="/"
           render={() => (
             <div>
               <h2 className="featured-moods">Featured Moods</h2>
-              <FeaturedMoods
-                handleMood={handleMood}
-                moods={appState.moods}
-              />
-              <MoodForm
-                handleMood={handleMood}
-                moods={appState.moods}
-              />
-            </div>
-          )}
-        />
+              <FeaturedMoods handleMood={handleMood} moods={appState.moods} />
+              <MoodForm handleMood={handleMood} moods={appState.moods} />
+            </div> )} />
       </Switch>
       <Footer />
     </div>

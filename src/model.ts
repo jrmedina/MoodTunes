@@ -1,6 +1,4 @@
-// import React from "react";
-
-export interface SongProp {
+export interface SingleSongProps {
   id?: number;
   title: string;
   artist: string;
@@ -15,15 +13,6 @@ interface MoodProp {
   img: string;
 }
 
-export interface SingleSongProps {
-  id?: number;
-  title: string;
-  artist: string;
-  urlKey: string;
-  genres: string[];
-  searchTerms?: string[];
-}
-
 export interface SingleMoodProps {
   id: number;
   title: string;
@@ -32,7 +21,7 @@ export interface SingleMoodProps {
 }
 
 export interface AppProps {
-  songs: SongProp[];
+  songs: SingleSongProps[];
   moods: MoodProp[];
   currentMood?: string;
 }
@@ -47,11 +36,11 @@ export interface SetMoodProps {
 }
 
 export interface SongsContainerProps {
-  filteredSongs: SongProp[];
+  filteredSongs: SingleSongProps[];
   currentMood: string | undefined;
   resetResultState: React.Dispatch<React.SetStateAction<any>>;
 }
 export interface ResultProps {
   currentMood: string;
-  songs: SongProp[]
+  songs: SingleSongProps[]
 }
