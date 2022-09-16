@@ -4,25 +4,31 @@
   justify-content: center;
 }
 
-.dropdown {
-  margin-right: 1%;
-  transition: transform 0.3s ease-in-out;
+.dropdown, .choose-mood-button {
+  cursor: pointer;
   background-color: black;
-  color: rgba(245, 245, 245, 0.7);
   border: 2px solid black;
   box-shadow: 0 1px 15px 2px rgba(255, 105, 180, 0.35);
-  cursor: pointer;
+  color: rgba(245, 245, 245, 0.8);
+  font-size: 18px;
+  letter-spacing: .15rem;
+  border-radius: 5px;
+}
+
+.dropdown {
+  transition: transform 0.3s ease-in-out;
   outline: none;
   height: 100%;
+  width: 13em;
+  margin-right: 1%;
+  padding: 2px 10px;
+  text-align: center;
 }
 
 .choose-mood-button {
-  background-color: black;
   transition: transform 0.2s ease-in-out;
-  color: rgba(245, 245, 245, 0.7);
-  border: 2px solid black;
-  box-shadow: 0 1px 15px 2px rgba(255, 105, 180, 0.35);
-  cursor: pointer;
+  padding: 3px 10px;
+  width: 12em;
 }
 
 .choose-mood-button:active {

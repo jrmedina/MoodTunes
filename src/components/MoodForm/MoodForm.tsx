@@ -3,26 +3,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { MoodProps, SetMoodProps } from '../../model'
 
-// interface MoodProps {
-//   moods: {
-//     id: number;
-//     title: string;
-//     img: string;
-//   }[];
-//   handleMood: React.Dispatch<React.SetStateAction<any>>;
-//   songs: {
-//     id: number;
-//     title: string;
-//     artist: string;
-//     urlKey: string;
-//     genres: string[];
-//     searchTerms: string[];
-//   }[];
-// }
-//
-// interface SetMoodProps {
-//   mood: string;
-// }
 
 const MoodForm: React.FC<MoodProps> = ({ moods, handleMood }) => {
   const [mood, setMood] = React.useState<SetMoodProps>({ mood: "" });

@@ -1,6 +1,7 @@
+import "./Footer.css";
 import React from "react";
 import { AiFillLinkedin, AiFillGithub } from "react-icons/ai";
-import "./Footer.css";
+
 
 const Footer: React.FC = () => {
   return (
@@ -9,12 +10,12 @@ const Footer: React.FC = () => {
         <p>Joshua Medina</p>
         <a
           className="linkedinAnchor"
-          href="https://www.linkedin.com/in/joshua-medina/"
-        >
+          href="https://www.linkedin.com/in/joshua-medina/">
           <AiFillLinkedin />
         </a>
-
-        <a className="githubAnchor" href="https://github.com/jrmedina">
+        <a 
+          className="githubAnchor" 
+          href="https://github.com/jrmedina">
           <AiFillGithub />
         </a>
       </div>
@@ -22,11 +23,12 @@ const Footer: React.FC = () => {
         <p>Michael Martinelli</p>
         <a
           className="linkedinAnchor"
-          href="https://www.linkedin.com/in/michael-martinelli-7230b5237/"
-        >
+          href="https://www.linkedin.com/in/michael-martinelli-7230b5237/">
           <AiFillLinkedin />
         </a>
-        <a className="githubAnchor" href="https://github.com/mmartinelli22">
+        <a 
+          className="githubAnchor" 
+          href="https://github.com/mmartinelli22">
           <AiFillGithub />
         </a>
       </div>
@@ -34,12 +36,12 @@ const Footer: React.FC = () => {
         <p>Jordan Farelli</p>
         <a
           className="linkedinAnchor"
-          href="https://www.linkedin.com/in/jordan-farelli/"
-        >
+          href="https://www.linkedin.com/in/jordan-farelli/">
           <AiFillLinkedin />
         </a>
-
-        <a className="githubAnchor" href="https://github.com/jfarelli">
+        <a 
+          className="githubAnchor" 
+          href="https://github.com/jfarelli">
           <AiFillGithub />
         </a>
       </div>
@@ -47,11 +49,9 @@ const Footer: React.FC = () => {
         <p>Ana Bennett</p>
         <a
           className="linkedinAnchor"
-          href="https://www.linkedin.com/in/ana-bennett/"
-        >
+          href="https://www.linkedin.com/in/ana-bennett/">
           <AiFillLinkedin />
         </a>
-
         <a className="githubAnchor" href="https://github.com/anabennett11">
           <AiFillGithub />
         </a>

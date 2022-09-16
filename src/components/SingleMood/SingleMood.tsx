@@ -1,7 +1,8 @@
 import "./SingleMood.css";
-import { Link } from "react-router-dom";
 import React from "react";
-import { SingleMoodProps } from '../../model'
+import { Link } from "react-router-dom";
+import { SingleMoodProps } from "../../model";
+
 
 const SingleMood: React.FC<SingleMoodProps> = ({
   title,
@@ -20,10 +21,9 @@ const SingleMood: React.FC<SingleMoodProps> = ({
           className="mood-img"
           src={image}
           id={title}
-          alt={title}
-        />
+          alt={title} />
       </Link>
-        <h2>{title}</h2>
+      <h2>{title}</h2>
     </div>
   );
 };

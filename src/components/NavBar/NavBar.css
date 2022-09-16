@@ -1,3 +1,18 @@
+h1 {
+  font-family: title;
+  font-size: 6em;
+  letter-spacing: 0.1em;
+  margin: 0%;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  color: rgba(245, 245, 245, 0.7);
+  text-shadow: 1px 6px 5px rgb(255, 105, 180);
+}
+
+h1:hover {
+  cursor: default;
+}
+
 .nav-container {
   display: flex;
   flex-direction: row;
@@ -13,19 +28,4 @@
 .skull {
   height: 6em;
   width: 6em;
-}
-
-h1 {
-  font-family: title;
-  font-size: 6em;
-  letter-spacing: 0.1em;
-  margin: 0%;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  color: rgba(245, 245, 245, 0.7);
-  text-shadow: 1px 6px 5px rgb(255, 105, 180);
-}
-
-h1:hover {
-  cursor: default;
 }

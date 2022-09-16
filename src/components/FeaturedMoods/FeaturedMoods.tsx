@@ -1,25 +1,8 @@
 import "./FeaturedMoods.css";
 import React from "react";
 import SingleMood from "../SingleMood/SingleMood";
-import "./FeaturedMoods.css";
-import { MoodProps } from '../../model'
+import { MoodProps } from "../../model";
 
-// interface MoodProps {
-//   songs: {
-//     id: number;
-//     title: string;
-//     artist: string;
-//     urlKey: string;
-//     genres: string[];
-//     searchTerms: string[];
-//   }[];
-//   moods: {
-//     id: number;
-//     title: string;
-//     img: string;
-//   }[];
-//   handleMood: React.Dispatch<React.SetStateAction<any>>;
-// }
 
 const FeaturedMoods: React.FC<MoodProps> = ({ moods, handleMood }) => {
   const moodMusic = moods
@@ -30,11 +13,9 @@ const FeaturedMoods: React.FC<MoodProps> = ({ moods, handleMood }) => {
           id={mood.id}
           title={mood.title}
           image={mood.img}
-          handleMood={handleMood}
-        />
+          handleMood={handleMood} />
       );
-    })
-    .slice(0, 10);
+    }).slice(0, 10);
 
   return <div className="moods-container">{moodMusic}</div>;
 };

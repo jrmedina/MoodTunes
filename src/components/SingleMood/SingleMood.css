@@ -1,12 +1,3 @@
-.single-mood {
-  height: 10em;
-  width: 17%;
-  background-color: rgba(0, 0, 0, 0.85);
-  box-shadow: 0 1px 15px 2px rgba(255, 105, 180, 0.35);
-  transition: transform 0.2s ease-in-out;
-  border-radius: 2px;
-}
-
 h2 {
   font-family: title;
   color: black;
@@ -24,6 +15,15 @@ img {
 
 .mood-img:hover {
   cursor: pointer;
+}
+
+.single-mood {
+  height: 10em;
+  width: 17%;
+  background-color: rgba(0, 0, 0, 0.85);
+  box-shadow: 0 1px 15px 2px rgba(255, 105, 180, 0.35);
+  transition: transform 0.2s ease-in-out;
+  border-radius: 2px;
 }
 
 .single-mood:hover {
