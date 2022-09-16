@@ -7,6 +7,7 @@ import Footer from "../Footer/Footer";
 import MoodForm from "../MoodForm/MoodForm";
 import FeaturedMoods from "../FeaturedMoods/FeaturedMoods";
 import SongsContainer from "../SongsContainer/SongsContainer";
+import Error from "../Error/Error";
 
 const App: React.FC = () => {
 
@@ -65,12 +66,18 @@ const App: React.FC = () => {
                 currentMood={resultState.currentMood} />
             </div> )} />
         <Route
-          path="/"
+          exact path="/"
           render={() => (
             <div>
               <h2 className="featured-moods">Featured Moods</h2>
               <FeaturedMoods handleMood={handleMood} moods={appState.moods} />
               <MoodForm handleMood={handleMood} moods={appState.moods} />
+            </div> )} />
+        <Route 
+          path="*"
+          render={() => (
+            <div>
+              <Error />
             </div> )} />
       </Switch>
       <Footer />
