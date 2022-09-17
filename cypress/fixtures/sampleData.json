@@ -1,15 +1,37 @@
-
- [
+{
+  "songs": [
     {
-      "id": 6,
+      "id": 12,
       "title": "Epic",
-      "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRomK6c1C-ls2QaArwg5b6FCzmR0k93r13cwg&usqp=CAU"
+      "artist": "Faith No More",
+      "urlKey": "4ReyTz0y3TGkX48wO3Llot",
+      "genres": ["Rock", "Alternative"],
+      "searchTerms": ["epic"]
     },
     {
-      "id": 7,
-      "title": "Euphoric",
-      "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRomK6c1C-ls2QaArwg5b6FCzmR0k93r13cwg&usqp=CAU"
+      "id": 20,
+      "title": "Take Me Home, Country Roads",
+      "artist": "John Denver",
+      "urlKey": "1YYhDizHx7PnDhAhko6cDS",
+      "genres": ["Country", "Light-Rock"],
+      "searchTerms": ["eccentric", "elegant", "euphoric", "floating"]
+    },
+    {
+      "id": 21,
+      "title": "Push Off",
+      "artist": "The Palms",
+      "urlKey": "3869c1bl5bJqdD3cyDw8hh",
+      "genres": ["Alternative"],
+      "searchTerms": ["eccentric", "elegant", "euphoric", "floating", "smooth"]
+    },
+    {
+      "id": 22,
+      "title": "Walk Like an Egyption",
+      "artist": "The Bangles",
+      "urlKey": "1Jwc3ODLQxtbnS8M9TflSP",
+      "genres": ["Rock"],
+      "searchTerms": ["happy", "epic"]
     }
   ]
 
-
+}
