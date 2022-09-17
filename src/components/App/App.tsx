@@ -9,6 +9,7 @@ import FeaturedMoods from "../FeaturedMoods/FeaturedMoods";
 import SongsContainer from "../SongsContainer/SongsContainer";
 import Error from "../Error/Error";
 import { fetchData } from "../../apiCalls"
+import RandomSong from "../RandomSong/RandomSong";
 
 const App: React.FC = () => {
 
@@ -20,6 +21,7 @@ const App: React.FC = () => {
   const [resultState, setResultState] = useState<ResultProps>({
     currentMood: "",
     songs: [],
+    randomSong: {}
   });
 
   useEffect(() => {
@@ -33,6 +35,7 @@ const App: React.FC = () => {
     setResultState({
       songs: results,
       currentMood: mood,
+      randomSong:results[0]
     });
   };
 
@@ -40,23 +43,40 @@ const App: React.FC = () => {
     setResultState({
       songs: [],
       currentMood: "",
+      randomSong: {}
     });
   };
+
+  const randomize = () => {
+    const getRandom = resultState.songs[Math.floor(Math.random() * resultState.songs.length)]
+   
+    setResultState({
+      songs: [],
+      currentMood: "",
+      randomSong: getRandom
+    });
+    
+  }
 
   return (
     <div className="App">
       <NavBar />
       <Switch>
         <Route
-          exact
-          path="/results"
+          exact path="/results"
           render={() => (
             <div>
               <SongsContainer
                 resetResultState={resetResultState}
                 filteredSongs={resultState.songs}
-                currentMood={resultState.currentMood} />
+                currentMood={resultState.currentMood}
+                randomize={randomize} />
             </div> )} />
+        <Route 
+          exact path="/random"
+          render={() => <RandomSong song={resultState.randomSong}/>}
+    
+          />
         <Route
           exact path="/"
           render={() => (

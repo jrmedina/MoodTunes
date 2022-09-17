@@ -9,6 +9,7 @@ const SongsContainer: React.FC<SongsContainerProps> = ({
   filteredSongs,
   currentMood,
   resetResultState,
+  randomize
 }) => {
   const songCards = filteredSongs.map((song) => {
     return (
@@ -36,6 +37,11 @@ const SongsContainer: React.FC<SongsContainerProps> = ({
       ) : (
         <h4>You gotta select a Mood to see some Tunes!</h4>
       )}
+      <Link to={"/random"} onClick={randomize}>
+        <button  className="random-button">
+          Random Tune for Your Mood
+        </button>
+      </Link>
       {songCards}
     </div>
   );
