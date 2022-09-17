@@ -26,7 +26,7 @@ const App: React.FC = () => {
 
   useEffect(() => {
     fetchData().then(json => setAppState({ songs: json.data.songs, moods: json.data.moods }) );
-  });
+  }, []);
  
   const handleMood = (mood: string): void => {
     const results = appState.songs.filter((song) =>
