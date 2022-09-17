@@ -2,8 +2,7 @@ import "./NavBar.css";
 import React from "react";
 import Skull from "../../assets/skull.png";
 
-// Do we need some TypeScript up in here???
-const NavBar:React.FC = () => {
+const NavBar: React.FC = () => {
   return (
     <div className="nav-container">
       <h1 className="title">Mood</h1>

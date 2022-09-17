@@ -2,7 +2,6 @@ import "./SingleSong.css";
 import React from "react";
 import { SingleSongProps } from "../../model";
 
-
 const SingleSong: React.FC<SingleSongProps> = ({ urlKey }) => {
   return (
     <div className="singleSong">

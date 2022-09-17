@@ -6,7 +6,6 @@ export interface SingleSongProps {
   urlKey: string;
   genres: string[];
   searchTerms: string[];
-  
 }
 
 interface MoodProp {
@@ -41,23 +40,16 @@ export interface SongsContainerProps {
   filteredSongs: SingleSongProps[];
   currentMood: string | undefined;
   resetResultState: MouseEventHandler<HTMLButtonElement>;
-  randomize?: React.Dispatch<React.SetStateAction<any>>;
+  randomize: React.Dispatch<React.SetStateAction<object>>;
 }
 
 export interface ResultProps {
   currentMood: string;
   songs: SingleSongProps[];
   randomSong: {};
-  
 }
 
 export interface RandomProps {
- song:any 
-}
-
-export interface NavContainerProps {
-  filteredSongs: SingleSongProps[];
-  currentMood: string | undefined;
-  resetResultState: MouseEventHandler<HTMLButtonElement>;
-  randomize?: React.Dispatch<React.SetStateAction<any>>;
+  song: any;
+  randomize: React.Dispatch<React.SetStateAction<object>>;
 }

@@ -3,7 +3,6 @@ import React from "react";
 import SingleMood from "../SingleMood/SingleMood";
 import { MoodProps } from "../../model";
 
-
 const FeaturedMoods: React.FC<MoodProps> = ({ moods, handleMood }) => {
   const moodMusic = moods
     .map((mood) => {
@@ -13,9 +12,11 @@ const FeaturedMoods: React.FC<MoodProps> = ({ moods, handleMood }) => {
           id={mood.id}
           title={mood.title}
           image={mood.img}
-          handleMood={handleMood} />
+          handleMood={handleMood}
+        />
       );
-    }).slice(0, 10);
+    })
+    .slice(0, 10);
 
   return <div className="moods-container">{moodMusic}</div>;
 };

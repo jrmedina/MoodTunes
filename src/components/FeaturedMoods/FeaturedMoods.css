@@ -8,3 +8,7 @@
   padding-right: 10%;
   margin-bottom: 2%;
 }
+
+img:hover {
+  cursor: pointer;
+}

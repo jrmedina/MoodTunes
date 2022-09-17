@@ -8,11 +8,10 @@ import MoodForm from "../MoodForm/MoodForm";
 import FeaturedMoods from "../FeaturedMoods/FeaturedMoods";
 import SongsContainer from "../SongsContainer/SongsContainer";
 import Error from "../Error/Error";
-import { fetchData } from "../../apiCalls"
+import { fetchData } from "../../apiCalls";
 import RandomSong from "../RandomSong/RandomSong";
 
 const App: React.FC = () => {
-
   const [appState, setAppState] = useState<AppProps>({
     songs: [],
     moods: [],
@@ -21,13 +20,15 @@ const App: React.FC = () => {
   const [resultState, setResultState] = useState<ResultProps>({
     currentMood: "",
     songs: [],
-    randomSong: {}
+    randomSong: {},
   });
 
   useEffect(() => {
-    fetchData().then(json => setAppState({ songs: json.data.songs, moods: json.data.moods }) );
-  });
- 
+    fetchData().then((json) =>
+      setAppState({ songs: json.data.songs, moods: json.data.moods })
+    );
+  }, []);
+
   const handleMood = (mood: string): void => {
     const results = appState.songs.filter((song) =>
       song.searchTerms.includes(mood.toLowerCase())
@@ -35,7 +36,7 @@ const App: React.FC = () => {
     setResultState({
       songs: results,
       currentMood: mood,
-      randomSong:results[0]
+      randomSong: results[0],
     });
   };
 
@@ -43,54 +44,65 @@ const App: React.FC = () => {
     setResultState({
       songs: [],
       currentMood: "",
-      randomSong: {}
+      randomSong: {},
     });
   };
 
   const randomize = () => {
-    const getRandom = resultState.songs[Math.floor(Math.random() * resultState.songs.length)]
-   
+    const getRandom =
+      resultState.songs[Math.floor(Math.random() * resultState.songs.length)];
+
     setResultState({
-      songs: [],
-      currentMood: "",
-      randomSong: getRandom
+      songs: [...resultState.songs],
+      currentMood: resultState.currentMood,
+      randomSong: getRandom,
     });
-    
-  }
+  };
 
   return (
     <div className="App">
       <NavBar />
       <Switch>
         <Route
-          exact path="/results"
+          exact
+          path="/results"
           render={() => (
             <div>
               <SongsContainer
                 resetResultState={resetResultState}
                 filteredSongs={resultState.songs}
                 currentMood={resultState.currentMood}
-                randomize={randomize} />
-            </div> )} />
-        <Route 
-          exact path="/random"
-          render={() => <RandomSong song={resultState.randomSong}/>}
-    
-          />
+                randomize={randomize}
+              />
+            </div>
+          )}
+        />
         <Route
-          exact path="/"
+          exact
+          path="/random"
+          render={() => (
+            <RandomSong song={resultState.randomSong} randomize={randomize} />
+          )}
+        />
+        <Route
+          exact
+          path="/"
           render={() => (
             <div>
               <h2 className="featured-moods">Featured Moods</h2>
               <FeaturedMoods handleMood={handleMood} moods={appState.moods} />
               <MoodForm handleMood={handleMood} moods={appState.moods} />
-            </div> )} />
-        <Route 
+            </div>
+          )}
+        />
+        <Route
           path="*"
           render={() => (
             <div>
               <Error />
-            </div> )} />
+            </div>
+          )}
+        />
       </Switch>
       <Footer />
     </div>

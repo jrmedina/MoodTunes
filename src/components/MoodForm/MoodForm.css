@@ -4,14 +4,15 @@
   justify-content: center;
 }
 
-.dropdown, .choose-mood-button {
+.dropdown,
+.choose-mood-button {
   cursor: pointer;
   background-color: black;
   border: 2px solid black;
   box-shadow: 0 1px 15px 2px rgba(255, 105, 180, 0.35);
   color: rgba(245, 245, 245, 0.8);
   font-size: 18px;
-  letter-spacing: .15rem;
+  letter-spacing: 0.15rem;
   border-radius: 5px;
 }
 
