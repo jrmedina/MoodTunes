@@ -35,7 +35,7 @@ const MoodForm: React.FC<MoodProps> = ({ moods, handleMood }) => {
       </select>
 
       <Link to={`/results`} onClick={handleClick}>
-        <button className="choose-mood-button">Search Mood</button>
+        <button className="choose-mood-button">Play Your Mood</button>
       </Link>
     </form>
   );

@@ -39,7 +39,7 @@ const SongsContainer: React.FC<SongsContainerProps> = ({
       {filteredSongs.length ? (
         <h4>Here are some {currentMood} Tunes to match your Mood!</h4>
       ) : (
-        <h4>You gotta select a Mood to see some Tunes!</h4>
+        <h4>You gotta select a Mood to play some Tunes!</h4>
       )}
       {songCards}
     </div>
