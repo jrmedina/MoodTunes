@@ -53,11 +53,12 @@ export interface ResultProps {
 
 export interface RandomProps {
  song:any 
-}
-
-export interface NavContainerProps {
-  filteredSongs: SingleSongProps[];
-  currentMood: string | undefined;
-  resetResultState: MouseEventHandler<HTMLButtonElement>;
   randomize?: React.Dispatch<React.SetStateAction<any>>;
 }
+
+// export interface NavContainerProps {
+//   filteredSongs: SingleSongProps[];
+//   currentMood: string | undefined;
+//   resetResultState: MouseEventHandler<HTMLButtonElement>;
+//   randomize?: React.Dispatch<React.SetStateAction<any>>;
+// }

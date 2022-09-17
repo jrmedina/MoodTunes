@@ -51,8 +51,8 @@ const App: React.FC = () => {
     const getRandom = resultState.songs[Math.floor(Math.random() * resultState.songs.length)]
    
     setResultState({
-      songs: [],
-      currentMood: "",
+      songs: [...resultState.songs],
+      currentMood: resultState.currentMood,
       randomSong: getRandom
     });
     
@@ -63,34 +63,45 @@ const App: React.FC = () => {
       <NavBar />
       <Switch>
         <Route
-          exact path="/results"
+          exact
+          path="/results"
           render={() => (
             <div>
               <SongsContainer
                 resetResultState={resetResultState}
                 filteredSongs={resultState.songs}
                 currentMood={resultState.currentMood}
-                randomize={randomize} />
-            </div> )} />
-        <Route 
-          exact path="/random"
-          render={() => <RandomSong song={resultState.randomSong}/>}
-    
-          />
+                randomize={randomize}
+              />
+            </div>
+          )}
+        />
         <Route
-          exact path="/"
+          exact
+          path="/random"
+          render={() => (
+            <RandomSong song={resultState.randomSong} randomize={randomize} />
+          )}
+        />
+        <Route
+          exact
+          path="/"
           render={() => (
             <div>
               <h2 className="featured-moods">Featured Moods</h2>
               <FeaturedMoods handleMood={handleMood} moods={appState.moods} />
               <MoodForm handleMood={handleMood} moods={appState.moods} />
-            </div> )} />
-        <Route 
+            </div>
+          )}
+        />
+        <Route
           path="*"
           render={() => (
             <div>
               <Error />
-            </div> )} />
+            </div>
+          )}
+        />
       </Switch>
       <Footer />
     </div>
