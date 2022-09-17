@@ -1,7 +1,8 @@
 h4 {
   color: rgba(245, 245, 245, 0.7);
-  font-size: 1.5em;
+  font-size: 2em;
   letter-spacing: 0.15rem;
+  margin-top: .2em;
 }
 
 .song-container {
@@ -10,9 +11,14 @@ h4 {
   width: 60vw;
 }
 
-.song-container > iframe {
-  display: flex;
-  align-items: flex-start;
+.button-container {
+  display: block;
+  margin-top: 3%;
+}
+
+.home-button {
+  margin-right: 15px;
+  width: 100%;
 }
 
 .home-button,.random-button {
