@@ -1,8 +1,7 @@
 import "./MoodForm.css";
 import React from "react";
 import { Link } from "react-router-dom";
-import { MoodProps, SetMoodProps } from '../../model'
-
+import { MoodProps, SetMoodProps } from "../../model";
 
 const MoodForm: React.FC<MoodProps> = ({ moods, handleMood }) => {
   const [mood, setMood] = React.useState<SetMoodProps>({ mood: "" });

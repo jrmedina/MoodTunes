@@ -1,5 +1,5 @@
-{
-  "moods": [
+
+ [
     {
       "id": 6,
       "title": "Epic",
@@ -11,4 +11,5 @@
       "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRomK6c1C-ls2QaArwg5b6FCzmR0k93r13cwg&usqp=CAU"
     }
   ]
-}
+
+

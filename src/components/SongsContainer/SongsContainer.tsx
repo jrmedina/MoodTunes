@@ -4,12 +4,11 @@ import { Link } from "react-router-dom";
 import SingleSong from "../SingleSong/SingleSong";
 import { SongsContainerProps } from "../../model";
 
-
 const SongsContainer: React.FC<SongsContainerProps> = ({
   filteredSongs,
   currentMood,
   resetResultState,
-  randomize
+  randomize,
 }) => {
   const songCards = filteredSongs.map((song) => {
     return (
@@ -34,9 +33,7 @@ const SongsContainer: React.FC<SongsContainerProps> = ({
           </button>
         </Link>
         <Link to={"/random"} onClick={randomize}>
-          <button  className="random-button">
-            Random Tune for Your Mood
-          </button>
+          <button className="random-button">Random Tune for Your Mood</button>
         </Link>
       </div>
       {filteredSongs.length ? (
