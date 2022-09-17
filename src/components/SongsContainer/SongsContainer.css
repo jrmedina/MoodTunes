@@ -15,7 +15,7 @@ h4 {
   align-items: flex-start;
 }
 
-.home-button {
+.home-button,.random-button {
   background-color: black;
   transition: transform 0.2s ease-in-out;
   color: rgba(245, 245, 245, 0.7);
@@ -29,13 +29,17 @@ h4 {
   letter-spacing: 0.15rem;
 }
 
-.home-button:active {
+.home-button:active, .random-button:active {
   background-color: rgba(245, 245, 245, 0.7);
   color: black;
 }
 
-.home-button:hover {
+.home-button:hover, .random-button:hover {
   transform: scale(1.1);
   background-color: rgba(0, 0, 0, 0.85);
   box-shadow: 0 1px 15px 2px rgb(255, 105, 180);
+}
+.random-button {
+  width: 15em;
+  margin-bottom: 45px;
 }
