@@ -1,12 +1,8 @@
 
 describe("App", () => {
   beforeEach(() => {
-    cy.intercept("GET", "/", { fixture: "/sampleData.json" })
-      .as("data")
-      .visit("http://localhost:3000")
-      .wait("@data")
-      .its("response.body")
-      .should("have.length", 1);
+    cy.visit("http://localhost:3000")
+    // .intercept("GET", "http://localhost:3001", { statudCode: 200 })
   });
 
   it("should render a navbar on load", () => {
@@ -99,7 +95,7 @@ describe("App", () => {
       .should("have.attr", "href")
       .and("equal", "https://github.com/jrmedina");
   });
-  it.only("should redirect the user to an error page when the page fails to load", () => {
+  it("should redirect the user to an error page when the page fails to load", () => {
     cy.visit("http://localhost:3000/blah")
       .get(".errorMessage")
       .contains("Sorry to kill your mood.")
