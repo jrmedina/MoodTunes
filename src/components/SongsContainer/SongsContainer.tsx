@@ -27,21 +27,23 @@ const SongsContainer: React.FC<SongsContainerProps> = ({
 
   return (
     <div className="song-container">
-      <Link to="/">
-        <button onClick={resetResultState} className="home-button">
-          Home
-        </button>
-      </Link>
+      <div className="button-container">
+        <Link to="/">
+          <button onClick={resetResultState} className="home-button">
+            Home
+          </button>
+        </Link>
+        <Link to={"/random"} onClick={randomize}>
+          <button  className="random-button">
+            Random Tune for Your Mood
+          </button>
+        </Link>
+      </div>
       {filteredSongs.length ? (
         <h4>Here are some {currentMood} Tunes to match your Mood!</h4>
       ) : (
         <h4>You gotta select a Mood to see some Tunes!</h4>
       )}
-      <Link to={"/random"} onClick={randomize}>
-        <button  className="random-button">
-          Random Tune for Your Mood
-        </button>
-      </Link>
       {songCards}
     </div>
   );
