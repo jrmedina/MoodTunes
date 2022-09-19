@@ -6,7 +6,7 @@ const Footer: React.FC = () => {
   return (
     <div className="footer">
       <div className="personContainer">
-        <p>Joshua Medina</p>
+        <p className="name">Joshua Medina</p>
         <a
           className="linkedinAnchor"
           href="https://www.linkedin.com/in/joshua-medina/"
@@ -18,7 +18,7 @@ const Footer: React.FC = () => {
         </a>
       </div>
       <div className="personContainer">
-        <p>Michael Martinelli</p>
+        <p className="name">Michael Martinelli</p>
         <a
           className="linkedinAnchor"
           href="https://www.linkedin.com/in/michael-martinelli-7230b5237/"
@@ -30,7 +30,7 @@ const Footer: React.FC = () => {
         </a>
       </div>
       <div className="personContainer">
-        <p>Jordan Farelli</p>
+        <p className="name">Jordan Farelli</p>
         <a
           className="linkedinAnchor"
           href="https://www.linkedin.com/in/jordan-farelli/"
@@ -42,7 +42,7 @@ const Footer: React.FC = () => {
         </a>
       </div>
       <div className="personContainer">
-        <p>Ana Bennett</p>
+        <p className="name">Ana Bennett</p>
         <a
           className="linkedinAnchor"
           href="https://www.linkedin.com/in/ana-bennett/"

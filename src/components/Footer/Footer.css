@@ -24,3 +24,8 @@
   font-size: 22px;
   letter-spacing: 0.25rem;
 }
+
+.name:hover {
+  text-shadow: 0 1px rgba(255, 105, 180, 0.95);
+  cursor: default;
+}
