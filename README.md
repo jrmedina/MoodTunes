@@ -6,7 +6,7 @@
 <p align="center">Gain more familiarity with <b>React</b> fundamentals</p> 
 <p align="center">Gain further understanding on setting up an <b>Express</b> server with <b>CRUD</b> methods</p>
 <p align="center">Become more comfortable on  testing <b>React</b> components & asynchronous JS with <b>Cypress</b></p> <p align="center">Create a multi-page UX using <b>Router</b></p>
-<p align="center"> Implement <b>typescript</b> with best practices for future applications
+<p align="center"> Implement <b>TypeScript</b> with best practices for future applications
 <br>
 
 <div align="center">
