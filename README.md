@@ -43,6 +43,7 @@
   <img alt="Github" src="https://user-images.githubusercontent.com/25181517/117364276-fc4eb280-aebd-11eb-92ba-8a6ef74b7313.png" width="20px"/> [Github](https://github.com/jrmedina) 
 <br>
 ## 🚶🏻‍♂️ <b>Walkthrough:</b>
+
 USER FLOW:
 Select a Mood:
 
