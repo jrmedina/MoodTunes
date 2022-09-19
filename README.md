@@ -2,11 +2,11 @@
   <img alt="funky" src="https://user-images.githubusercontent.com/102757890/191075033-917899b6-bfcb-4667-bcc3-f14b5201b3f7.png" width="738px"/><br/>
   MoodTunes is an application that encourages a user to share their mood, in return a playlist of Tunes will be provided to reflect said Mood.
 </h2>
-
-<p align="center">Gain more familiarity with <b>React</b> fundamentals</p> 
-<p align="center">Gain further understanding on setting up an <b>Express</b> server with <b>CRUD</b> methods</p>
-<p align="center">Become more comfortable on  testing <b>React</b> components & asynchronous JS with <b>Cypress</b></p> <p align="center">Create a multi-page UX using <b>Router</b></p>
-<p align="center"> Implement <b>TypeScript</b> with best practices for future applications
+<p align="center"> Learn and implement <b>TypeScript</b> along with the language's best practices
+<br>
+<p align="center">Gain further understanding and practice with <b>React</b> fundamentals</p> 
+<p align="center">Create an <b>Express</b> server will handrolled data that allows the use of <b>CRUD</b> methods</p>
+<p align="center">Use <b>Cypress</b> to test the a user's experience end to end</p> <p align="center">Create a multi-page UX using <b>Router</b></p>
 
 <br>
 
