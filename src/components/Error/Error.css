@@ -12,9 +12,10 @@
   animation-name: spinning;
   animation-duration: 3s;
   animation-iteration-count: infinite;
-  /* linear | ease | ease-in | ease-out | ease-in-out */
   animation-timing-function: linear;
+  width: 90%;
 }
+
 .home-button {
   background-color: black;
   transition: transform 0.2s ease-in-out;
