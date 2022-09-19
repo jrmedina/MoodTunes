@@ -14,9 +14,9 @@
 
 ## 🛸 <b>Deployed Pages:</b>
 
-[Mood-Tunes](///link)
+[MoodTunes](https://mood-tunes.vercel.app/)
 
-[Mood-Tunes API](https://moodtunes-api.herokuapp.com/)
+[MoodTunes API](https://moodtunes-api.herokuapp.com/)
 </div>
 
 ## ⚡️ <b>Getting Started:</b>
