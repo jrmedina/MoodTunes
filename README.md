@@ -1,5 +1,5 @@
 <h2 align="center">
-  <img alt="funky" src="https://user-images.githubusercontent.com/102757890/191075033-917899b6-bfcb-4667-bcc3-f14b5201b3f7.png" width="738px"/><br/>
+  <img alt="mood" src="https://user-images.githubusercontent.com/102757890/191075033-917899b6-bfcb-4667-bcc3-f14b5201b3f7.png" width="738px"/><br/>
   MoodTunes is an application that encourages a user to share their mood, in return a playlist of Tunes will be provided to reflect said Mood.
 </h2>
 <p align="center"> Learn and implement <b>TypeScript</b> along with the language's best practices
@@ -16,7 +16,7 @@
 
 [MoodTunes](https://mood-tunes.vercel.app/)
 
-[MoodTunes API](https://moodtunes-api.herokuapp.com/)
+[MoodTunes API](https://mood-tunes-api.vercel.app/)
 </div>
 
 ## ⚡️ <b>Getting Started:</b>
